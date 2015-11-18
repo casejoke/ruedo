@@ -1,9 +1,9 @@
 <?php
 // Heading
-$_['heading_title']     = 'Игры/События/Турниры';
+$_['heading_title']     = 'Кейсы';
 
 // Text
-$_['text_success']      = 'Список игр  успешно изменен!';
+$_['text_success']      = 'Список кейсов  успешно изменен!';
 $_['text_list']         = 'Файлы для скачивания';
 $_['text_add']          = 'Добавить';
 $_['text_edit']         = 'Редактирование';
@@ -22,15 +22,15 @@ $_['column_action']     		= 'Действие';
 $_['tab_occasion_record'] 		= 'Статистика игры';
 
 // Entry
-$_['entry_title']       		= 'Название события';
+$_['entry_title']       		= 'Название кейса';
 $_['entry_description']      = 'Описание';
 $_['entry_meta_title'] 	     = 'Мета-тег Title';
 $_['entry_meta_keyword'] 	 = 'Мета-тег Keywords';
 $_['entry_meta_description'] = 'Мета-тег Description';
-$_['entry_occasion_date'] 		= 'Дата события';
+$_['entry_occasion_date'] 		= 'Дата создания кейсак';
 $_['entry_occasion_time'] 		= 'Время события';
 $_['entry_occasion_season_id']     			= 'Сезон';
-$_['entry_occasion_group_id']     			= 'Формат события';
+$_['entry_occasion_group_id']     			= 'Фильтр';
 $_['entry_image_title']         = 'Название изображения';
 $_['entry_video_title']         = 'Название видео';
 $_['entry_keyword']          = 'SEO URL';

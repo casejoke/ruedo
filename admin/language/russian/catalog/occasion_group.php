@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']     = 'Формат Игр';
+$_['heading_title']     = 'Фильтр для кейсов';
 
 // Text
 $_['text_success']      = 'Настройки успешно изменены!';
@@ -10,7 +10,7 @@ $_['text_edit']         = 'Редактирование';
 $_['text_upload']       = 'Файл загружен';
 
 // Column
-$_['column_title']       		= 'Название';
+$_['column_title']       		= 'Название категории';
 $_['column_season_date_begin'] 	= 'Дата начала сезона';
 $_['column_season_date_end'] 	= 'Дата окончания сезона';
 $_['column_date_added'] 		= 'Дата';
@@ -20,7 +20,7 @@ $_['column_action']     		= 'Действие';
 
 
 // Entry
-$_['entry_title']       		= 'Название формата';
+$_['entry_title']       		= 'Название категории фильтра';
 $_['entry_season_date_begin'] 	= 'Дата начала сезона';
 $_['entry_season_date_end'] 	= 'Дата окончания сезона';
 $_['entry_status']     			= 'Статус';

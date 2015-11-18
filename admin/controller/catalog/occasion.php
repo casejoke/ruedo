@@ -768,11 +768,11 @@ class ControllerCatalogOccasion extends Controller {
 			}
 		}
 		if ( $this->request->post['occasion_place_id'] == 0 ) {
-			$this->error['occasion_place_id'] = sprintf($this->language->get('error_place_id'));
+			//$this->error['occasion_place_id'] = sprintf($this->language->get('error_place_id'));
 		}
 
 		if ( (utf8_strlen($this->request->post['price']) < 1)) {
-			$this->error['price'] = sprintf($this->language->get('error_price'));
+			//$this->error['price'] = sprintf($this->language->get('error_price'));
 		}
 
 		if (isset($this->request->post['occasion_image'])) {

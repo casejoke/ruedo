@@ -4,7 +4,7 @@
   <div class="container">
     <div class="card">
       <div class="card-header">
-        <h2>Редактирование формата игры</h2>
+        <h2>Редактирование категории фильтра</h2>
         <ul class="actions">
             <li> <button type="submit" form="form-information"  class="btn btn-success"><?php echo $button_save; ?></button></li>
             <li>

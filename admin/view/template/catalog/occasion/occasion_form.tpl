@@ -4,7 +4,7 @@
   <div class="container">
     <div class="card">
       <div class="card-header">
-        <h2>Редактирование события</h2>
+        <h2>Редактирование кейса</h2>
         <ul class="actions">
             <li> <button type="submit" form="form-information"  class="btn btn-success"><?php echo $button_save; ?></button></li>
             <li>
@@ -28,8 +28,8 @@
                 <li class="active"><a href="#tab-general" aria-controls="tab-general" role="tab" data-toggle="tab"><?php echo $tab_general; ?></a></li>
                 <li><a href="#tab-data" aria-controls="tab-data" role="tab" data-toggle="tab"><?php echo $tab_data; ?></a></li>
                 <li><a href="#tab-image" aria-controls="tab-image" role="tab" data-toggle="tab"><?php echo $tab_image; ?></a></li>
-                <li><a href="#tab-video" aria-controls="tab-video" role="tab" data-toggle="tab"><?php echo $tab_video; ?></a></li>
-                <li><a href="#tab-customers" aria-controls="tab-customers" role="tab" data-toggle="tab"><?php echo $tab_occasion_record; ?></a></li>
+                <li class="hidden"><a href="#tab-video" aria-controls="tab-video" role="tab" data-toggle="tab"><?php echo $tab_video; ?></a></li>
+                <li class="hidden"><a href="#tab-customers" aria-controls="tab-customers" role="tab" data-toggle="tab"><?php echo $tab_occasion_record; ?></a></li>
             </ul>
           
             <div class="tab-content">
@@ -106,7 +106,7 @@
                 <div role="tabpanel" class="tab-pane" id="tab-data">
                   <div class="card-body card-padding">
                     <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 hidden">
                         <div class="form-group <?php if ($error_keyword) { ?> has-error <?php } ?>">
                           <div class="fg-line">
                               <label class="control-label" for="input-keyword"><?php echo $entry_keyword; ?></label>
@@ -121,7 +121,7 @@
                     <div class="row">
 
                       
-                      <div class="col-sm-6">
+                      <div class="col-sm-6 ">
 
                          <div class="form-group">
                             <div class="fg-line">
@@ -130,18 +130,52 @@
                             </div>
                           </div><!--/.form-group-->
 
-                          <div class="form-group">
+                          <div class="form-group hidden">
                             <div class="fg-line">
                                 <label class="control-label" for="input-occasion_time"><?php echo $entry_occasion_time; ?></label>
                                 <input type="text" name="occasion_time" value="<?php echo $occasion_time; ?>"  id="input-occasion_time" class="form-control" />
                             </div>
                           </div><!--/.form-group-->
-
+                          <div class="form-group">
+                            <div class="fg-line">
+                              <label class="control-label" for="input-status"><?php echo $entry_status; ?></label>
+                              <div class="select">
+                                <select name="status" id="input-status" class="form-control">
+                                  <?php if (!empty($ar_status)) { ?>
+                                    <?php foreach ($ar_status as $value) { ?>
+                                    <?php if ($value['status_id'] == $status) { ?>
+                                      <option value="<?php echo $value['status_id']; ?>" selected="selected"><?php echo $value['title']; ?></option>
+                                    <?php } else { ?>
+                                      <option value="<?php echo $value['status_id']; ?>"><?php echo $value['title']; ?></option>
+                                    <?php } ?>
+                                    <?php } ?>
+                                  <?php } ?>
+                                 
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="fg-line">
+                              <label class="control-label" for="input-status"><?php echo $entry_visibility; ?></label>
+                              <div class="select">
+                                <select name="visibility" id="input-visibility" class="form-control">
+                                  <?php if ($visibility) { ?>
+                                  <option value="0"><?php echo $text_disabled; ?></option>
+                                  <option value="1" selected="selected"><?php echo $text_enabled; ?></option>
+                                  <?php } else { ?>
+                                  <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
+                                  <option value="1"><?php echo $text_enabled; ?></option>
+                                  <?php } ?>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
                         </div>
 
 
 
-                      <div class="col-sm-6">
+                      <div class="col-sm-6 hidden">
                         <div class="form-group">
                             <div class="fg-line">
                               <label class="control-label" for="input-occasion_season_id"><?php echo $entry_occasion_season_id; ?></label>
@@ -163,7 +197,7 @@
                             </div>
                           </div>
                       </div>
-                      <div class="col-sm-6">
+                      <div class="col-sm-6 hidden">
                         <div class="form-group <?php if ($error_place_id) { ?> has-error <?php } ?>">
 
                           <div class="fg-line">
@@ -220,7 +254,7 @@
                           </div>
                         </div>  
 
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 hidden">
                           <div class="form-group <?php if ($error_price) { ?> has-error <?php } ?>">
                             <div class="fg-line">
                                 <label class="control-label" for="input-price"><?php echo $entry_price; ?></label>
@@ -230,7 +264,7 @@
                               <small class="help-block"><?php echo $error_price; ?></small>
                             <?php } ?>
                           </div><!--/.form-group-->
-                          <div class="form-group">
+                          <div class="form-group hidden">
                             <div class="fg-line">
                                 <label class="control-label" for="input-best_price"><?php echo $entry_best_price; ?></label>
                                 <input type="text" name="best_price" value="<?php echo $best_price; ?>"  id="input-best_price" class="form-control" />
@@ -239,47 +273,7 @@
                         </div>
 
                     </div>
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <div class="fg-line">
-                            <label class="control-label" for="input-status"><?php echo $entry_status; ?></label>
-                            <div class="select">
-                              <select name="status" id="input-status" class="form-control">
-                                <?php if (!empty($ar_status)) { ?>
-                                  <?php foreach ($ar_status as $value) { ?>
-                                  <?php if ($value['status_id'] == $status) { ?>
-                                    <option value="<?php echo $value['status_id']; ?>" selected="selected"><?php echo $value['title']; ?></option>
-                                  <?php } else { ?>
-                                    <option value="<?php echo $value['status_id']; ?>"><?php echo $value['title']; ?></option>
-                                  <?php } ?>
-                                  <?php } ?>
-                                <?php } ?>
-                               
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                          <div class="form-group">
-                            <div class="fg-line">
-                              <label class="control-label" for="input-status"><?php echo $entry_visibility; ?></label>
-                              <div class="select">
-                                <select name="visibility" id="input-visibility" class="form-control">
-                                  <?php if ($visibility) { ?>
-                                  <option value="0"><?php echo $text_disabled; ?></option>
-                                  <option value="1" selected="selected"><?php echo $text_enabled; ?></option>
-                                  <?php } else { ?>
-                                  <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
-                                  <option value="1"><?php echo $text_enabled; ?></option>
-                                  <?php } ?>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
 

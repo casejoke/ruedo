@@ -102,9 +102,10 @@ $_['text_paypal_manage']               = 'PayPal';
 $_['text_paypal_search']               = 'Поиск транзакции';
 
 $_['text_logout']          	= 'Выход';
-$_['text_occasion']         = 'Игры';
+$_['text_occasion']         = 'Кейсы';
+$_['text_occasion_group']   = 'Фильтр кейсов';
 $_['text_customer_stats']         = 'Статистика';
-$_['text_occasion_group']   = 'Формат игр';
+
 $_['text_place']          	= 'Местонахождение';
 $_['text_occasion_record']  = 'Запись на игру';
 
