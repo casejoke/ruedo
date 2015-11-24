@@ -40,6 +40,7 @@
   <script type="text/javascript" src="catalog/view/javascript/jquery.fancybox.js"></script>
   <script type="text/javascript" src="catalog/view/javascript/prefixfree.min.js"></script>
   <script type="text/javascript" src="catalog/view/javascript/jquery.transit.min.js"></script>
+  <script type="text/javascript" src="catalog/view/javascript/slick.min.js"></script>
   <script type="text/javascript" src="catalog/view/javascript/modernizr.js"></script>
   <script type="text/javascript" src="catalog/view/javascript/main.js"></script>
 
@@ -52,6 +53,7 @@
   <link rel="stylesheet" href="catalog/view/theme/default/assets/css/normalize.css" />
   <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/assets/css/idangerous.swiper.css"/>
   <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/assets/css/jquery.fancybox.css"/>
+  <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/assets/css/slick.css"/>
   <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/assets/css/main.css"/>
 
 

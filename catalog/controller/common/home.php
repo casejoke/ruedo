@@ -8,6 +8,45 @@ class ControllerCommonHome extends Controller {
 		if (isset($this->request->get['route'])) {
 			$this->document->addLink(HTTP_SERVER, 'canonical');
 		}
+		$this->load->model('catalog/occasion');
+		$this->load->model('catalog/occasion_group');
+		$this->load->model('tool/image');
+
+		//подтянем фильтр
+		//получаем активные форматы
+		$occasion_group_active = $this->model_catalog_occasion_group->getActiveOccasionGroup();
+		$data['occasion_groups'] = array();
+		foreach ($occasion_group_active as $occasion_group) {
+			$data['occasion_groups'][] = array(
+				'occasion_group_id' => $occasion_group['occasion_group_id'],
+				'link' => 'type_'.$occasion_group['occasion_group_id'],
+				'title' => $occasion_group['title']
+			);
+		}
+
+		$filter_data = array(
+			'filter_status'    => 1,
+			'sort' => 'd.occasion_date',
+			'order' => 'ASC'
+		);
+	 	$occasions = $this->model_catalog_occasion->getOccasions($filter_data);
+	 	$data['occasions'] = array();
+		foreach ($occasions as $occasion) {
+			foreach ($occasion_to_group as $occasion_to_group_val) {
+				if( $occasion['occasion_id'] == $occasion_to_group_val['occasion_id']){
+					
+					$isset_best_price = ((int)$occasion['best_price'] > 0 )?true:false;
+					$data['occasions'][$occasion_to_group_val['occasion_group_id']][] = array (
+						'occasion_id' => $occasion['occasion_id'],
+						'title' 		=> html_entity_decode($occasion['title'], ENT_QUOTES),
+						'min_title' 		=> html_entity_decode($occasion['min_title'], ENT_QUOTES),
+						'occasion_group_id' => $occasion_to_group_val['occasion_group_id'],
+						'image'			=> $image,
+					);
+				}
+			}
+		}
+
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');

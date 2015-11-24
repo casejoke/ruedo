@@ -3,7 +3,7 @@
 <?php echo $column_left; ?>
 <?php echo $column_right; ?>
 <?php echo $content_bottom; ?>
-<main class="content clear">
+  <main class="content clear">
     <header class="header clear">
       <nav class="menu clear">
         <ul>
@@ -54,7 +54,25 @@
         <div class="about-heading">
           <h2>Мы</h2>
         </div>
-        <p class="about-note">Мы воплощаем в жизнь проекты любой сложности, географии и размера</p>
+        <div class="notes-slider-wrap notes-slider-wrap-1">
+          <div class="notes-slider">
+            <div>
+              Мы воплощаем в жизнь проекты любой сложности, географии и размера
+            </div>
+            <div>
+              Мы воплощаем в жизнь проекты любой сложности, географии и размера 2
+            </div>
+            <div>
+              Мы воплощаем в жизнь проекты любой сложности, географии и размера 3
+            </div>
+            <div>
+              Мы воплощаем в жизнь проекты любой сложности, географии и размера 4
+            </div>
+            <div>
+              Мы воплощаем в жизнь проекты любой сложности, географии и размера 5
+            </div>
+          </div>
+        </div>
         <div class="about__block about__block_worktime">
           уже более <span class="about__block-worktime-num">15 лет</span>
         </div>
@@ -90,17 +108,43 @@
         <div class="projects__title-wrap parallax-element">
           <h2 class="projects__title">Проекты</h2>
         </div>
-        <p class="projects__note">От корпоративных представлений до застройки лесопарка.</p>
+        <div class="notes-slider-wrap">
+          <div class="notes-slider">
+            <div>
+              От корпоративных представлений до застройки лесопарка.
+            </div>
+            <div>
+              От корпоративных представлений до застройки лесопарка 2.
+            </div>
+            <div>
+              От корпоративных представлений до застройки лесопарка 3.
+            </div>
+            <div>
+              От корпоративных представлений до застройки лесопарка 4.
+            </div>
+            <div>
+              От корпоративных представлений до застройки лесопарка 5.
+            </div>
+          </div>
+        </div>
         <nav class="projects-menu">
           <span class="projects-menu__toggle"></span>
           <ul class="projects-menu__list">
             <li class="projects-menu__item"><a class="projects-menu__link projects-menu__link_active" data-type="" href="#">Все</a></li>
-            <li class="projects-menu__item"><a class="projects-menu__link" data-type="pr" href="#">PR</a></li>
-            <li class="projects-menu__item"><a class="projects-menu__link projects-menu__link_highlight" data-type="cc" href="#">CORPORATE COMMUNICATION</a></li>
-            <li class="projects-menu__item"><a class="projects-menu__link" data-type="event" href="#">EVENT / DESIGN / PRODUCTION</a></li>
+            <?php if (!empty($occasion_groups)) { ?>
+              <?php $i = 1; ?>
+              <?php foreach ($occasion_groups as $og) { ?>
+                <li class="projects-menu__item"><a class="projects-menu__link <?php echo ($i%2 ==0)?'projects-menu__link_highlight': ''; ?>" data-type="<?php echo $og['link']; ?>" href="#"><?php echo $og['title']; ?></a></li>
+                <?php $i++ ?>
+              <?php } ?>
+              
+            <?php } ?>
           </ul>
         </nav>
         <div class="projects-list clear">
+
+          <?php if() ?>
+
           <div class="project project_pr project_event">
             <img class="project__image" src="images/project1.jpg"/>
             <a class="project__name-outer popup" href="#project1">
@@ -165,6 +209,7 @@
               </span>
             </a>
           </div>
+
           <div class="project project_pr">
             <img class="project__image" src="images/project9.jpg"/>
             <a class="project__name-outer popup" href="#project9">
@@ -173,6 +218,9 @@
               </span>
             </a>
           </div>
+
+
+
         </div>
       </div>
       <div class="parallax-outer">        
@@ -191,7 +239,25 @@
         <h2 class="service__title">Услуги</h2>
       </div>
       <div class="wrap">
-        <p class="service__note">Бутик-агенство в большом городе</p>
+        <div class="notes-slider-wrap">
+          <div class="notes-slider">
+            <div>
+              Бутик-агенство в большом городе
+            </div>
+            <div>
+              Бутик-агенство в большом городе 2
+            </div>
+            <div>
+              Бутик-агенство в большом городе 3
+            </div>
+            <div>
+              Бутик-агенство в большом городе 4
+            </div>
+            <div>
+              Бутик-агенство в большом городе 5
+            </div>
+          </div>
+        </div>
         <div class="service__list clear">
           <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -280,7 +346,25 @@
         <div class="team__title-wrap">
           <h2 class="team__title">команда</h2>
         </div>
-        <p class="team__note">Достаточные для уникальности каждого под ключ.</p>
+        <div class="notes-slider-wrap">
+          <div class="notes-slider">
+            <div>
+              Достаточные для уникальности каждого под ключ.
+            </div>
+            <div>
+              Достаточные для уникальности каждого под ключ 2
+            </div>
+            <div>
+              Достаточные для уникальности каждого под ключ 3
+            </div>
+            <div>
+              Достаточные для уникальности каждого под ключ 4
+            </div>
+            <div>
+              Достаточные для уникальности каждого под ключ 5
+            </div>
+          </div>
+        </div>
         <div class="team__member team__member1">
           <div class="team__member-name">
             Натали Чаплюк
@@ -357,7 +441,25 @@
         <h2 class="contacts__title">Контакты</h2>
       </div>
       <div class="wrap">
-        <p class="contacts__note">В златоглавой Москве, но и по всему миру летаем.</p>
+        <div class="notes-slider-wrap">
+          <div class="notes-slider">
+            <div>
+              В златоглавой Москве, но и по всему миру летаем.
+            </div>
+            <div>
+              В златоглавой Москве, но и по всему миру летаем 2
+            </div>
+            <div>
+              В златоглавой Москве, но и по всему миру летаем 3
+            </div>
+            <div>
+              В златоглавой Москве, но и по всему миру летаем 4
+            </div>
+            <div>
+              В златоглавой Москве, но и по всему миру летаем 5
+            </div>
+          </div>
+        </div>
         <div class="contacts__address">
           <h3 class="contacts__address-title">Адрес</h3>
           <p class="contacts__address-text">125450, Первопрестольный пер.,<br/>Москва, Росссия</p>
@@ -700,8 +802,6 @@
           <h2>Вакансии</h2>
           <p>Нам требуются следующие специалисты:</p>
           <p>< Специалист > на 8-ми часовой рабочий день, зарплата < x > рублей.</p>
-          <p>< Специалист > на удалённую работу, зарплата < x > рублей.</p>
-          <p>< Соискатель помощника >, зарплата < x > рублей.</p>
           <a class="popup-project__close popup-project__close_top" href="#"></a>
         </div>
       </div>

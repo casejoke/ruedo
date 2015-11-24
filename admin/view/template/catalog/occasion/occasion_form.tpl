@@ -63,6 +63,17 @@
                               <small class="help-block"><?php echo $error_title[$language['language_id']]; ?></small>
                             <?php } ?>
                           </div>
+
+                           <div class="form-group required <?php if (isset($error_min_title[$language['language_id']])) { ?> has-error <?php } ?>">
+                            <div class="fg-line">
+                                <label class="control-label" for="input-min_title<?php echo $language['language_id']; ?>"><?php echo $entry_min_title; ?></label>
+                                <input type="text" name="occasion_description[<?php echo $language['language_id']; ?>][min_title]" value="<?php echo isset($occasion_description[$language['language_id']]) ? $occasion_description[$language['language_id']]['min_title'] : ''; ?>"  id="input-min_title<?php echo $language['language_id']; ?>" class="form-control" />
+                            </div>
+                            <?php if (isset($error_min_title[$language['language_id']])) { ?>
+                              <small class="help-block"><?php echo $error_min_title[$language['language_id']]; ?></small>
+                            <?php } ?>
+                          </div>
+
                           <div class="form-group required <?php if (isset($error_description[$language['language_id']])) { ?> has-error <?php } ?>">
                             <div class="fg-line">
                                 <label class="control-label m-b-10" for="input-description<?php echo $language['language_id']; ?>"><?php echo $entry_description; ?></label>

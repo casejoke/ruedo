@@ -22,7 +22,9 @@ $_['column_action']     		= 'Действие';
 $_['tab_occasion_record'] 		= 'Статистика игры';
 
 // Entry
-$_['entry_title']       		= 'Название кейса';
+$_['entry_title']       		= 'Название кейса(1 строка)';
+$_['entry_min_title']       		= 'Название кейса(2 строка)';
+
 $_['entry_description']      = 'Описание';
 $_['entry_meta_title'] 	     = 'Мета-тег Title';
 $_['entry_meta_keyword'] 	 = 'Мета-тег Keywords';

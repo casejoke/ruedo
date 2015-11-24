@@ -319,6 +319,7 @@ class ControllerCatalogOccasion extends Controller {
 		$data['text_unselect_all'] = $this->language->get('text_unselect_all');
 		
 		$data['entry_title'] = $this->language->get('entry_title');
+		$data['entry_min_title'] = $this->language->get('entry_min_title');
 		$data['entry_description'] = $this->language->get('entry_description');
 		$data['entry_meta_title'] = $this->language->get('entry_meta_title');
 		$data['entry_meta_description'] = $this->language->get('entry_meta_description');
@@ -362,6 +363,12 @@ class ControllerCatalogOccasion extends Controller {
 			$data['error_title'] = $this->error['title'];
 		} else {
 			$data['error_title'] = array();
+		}
+
+		if (isset($this->error['min_title'])) {
+			$data['error_min_title'] = $this->error['min_title'];
+		} else {
+			$data['error_min_title'] = array();
 		}
 
 		if (isset($this->error['description'])) {
@@ -741,8 +748,12 @@ class ControllerCatalogOccasion extends Controller {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 		foreach ($this->request->post['occasion_description'] as $language_id => $value) {
-			if ((utf8_strlen($value['title']) < 3) || (utf8_strlen($value['title']) > 64)) {
+			if ((utf8_strlen($value['title']) < 3) || (utf8_strlen($value['title']) > 255)) {
 				$this->error['title'][$language_id] = $this->language->get('error_title');
+			}
+
+			if ((utf8_strlen($value['min_title']) < 3) || (utf8_strlen($value['min_title']) > 255)) {
+				$this->error['min_title'][$language_id] = $this->language->get('error_min_title');
 			}
 
 			if (utf8_strlen($value['description']) < 3) {

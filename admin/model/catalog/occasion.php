@@ -21,6 +21,7 @@ class ModelCatalogOccasion extends Model {
 				occasion_id = '" . (int)$occasion_id . "', 
 				language_id = '" . (int)$language_id . "', 
 				title = '" . $this->db->escape($value['title']) . "',
+				min_title = '" . $this->db->escape($value['min_title']) . "',
 				description = '" . $this->db->escape($value['description']) . "', 
 				meta_title = '" . $this->db->escape($value['meta_title']) . "', 
 				meta_description = '" . $this->db->escape($value['meta_description']) . "', 
@@ -128,6 +129,7 @@ class ModelCatalogOccasion extends Model {
 				occasion_id = '" . (int)$occasion_id . "', 
 				language_id = '" . (int)$language_id . "', 
 				title = '" . $this->db->escape($value['title']) . "',
+				min_title = '" . $this->db->escape($value['min_title']) . "',
 				description = '" . $this->db->escape($value['description']) . "', 
 				meta_title = '" . $this->db->escape($value['meta_title']) . "', 
 				meta_description = '" . $this->db->escape($value['meta_description']) . "', 
@@ -305,6 +307,7 @@ class ModelCatalogOccasion extends Model {
 		foreach ($query->rows as $result) {
 			$occasion_description_data[$result['language_id']] = array(
 				'title' => (!$copy)? $result['title']:'copy_'.$result['title'],
+				'min_title'      => $result['min_title'],
 				'description'      => $result['description'],
 				'meta_title'       => $result['meta_title'],
 				'meta_description' => $result['meta_description'],
