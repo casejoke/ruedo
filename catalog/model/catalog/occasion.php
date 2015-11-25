@@ -174,6 +174,36 @@ class ModelCatalogOccasion extends Model {
 
 		return $query->rows;
 	}
+	public function getOccasionsImages(){
+		$occasion_image_data = array();
+		
+		$occasion_image_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "occasion_image ORDER BY occasion_image_id ASC");
+		
+		foreach ($occasion_image_query->rows as $occasion_image) {
+			
+			$occasion_image_description_data = array();
+			 
+			$occasion_image_description_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "occasion_image_description 
+				WHERE occasion_image_id = '" . (int)$occasion_image['occasion_image_id'] . "' 
+					AND occasion_id = '" . (int)$occasion_image['occasion_id'] . "'");
+			
+			foreach ($occasion_image_description_query->rows as $occasion_image_description) {			
+				$occasion_image_description_data[$occasion_image_description['language_id']] = array(
+					'title' => $occasion_image_description['title']
+				);
+			}
+			
+			$occasion_image_data[$occasion_image['occasion_id']][] = array(
+				'occasion_image_description'  => $occasion_image_description_data,
+				'link'                     		=> $occasion_image['link'],
+				'image'                    		=> $occasion_image['image'],
+				'sort_order'			    				=> $occasion_image['sort_order'],
+			);
+			
+		}
+		
+		return $occasion_image_data;
+	}
 	public function getOccasionImages($occasion_id) {
 		$occasion_image_data = array();
 		

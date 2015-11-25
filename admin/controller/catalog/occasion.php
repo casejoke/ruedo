@@ -52,6 +52,7 @@ class ControllerCatalogOccasion extends Controller {
 		$this->load->model('catalog/occasion');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
+			
 			$this->model_catalog_occasion->editOccasion($this->request->get['occasion_id'], $this->request->post);
 
 			$this->session->data['success'] = $this->language->get('text_success');

@@ -98,8 +98,11 @@ class ModelCatalogOccasion extends Model {
 		}
 
 		if (isset($data['occasion_to_occasion_group'])) {
-			foreach ($data['occasion_to_occasion_group'] as $occasion_occasion_group) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "occasion_to_occasion_group SET occasion_id = '" . (int)$occasion_id . "', occasion_group_id = '" . (int)$occasion_occasion_group['occasion_group_id'] . "'");
+			foreach ($data['occasion_to_occasion_group'] as $key => $occasion_occasion_group) {
+				$this->db->query("INSERT INTO " . DB_PREFIX . "occasion_to_occasion_group SET 
+					occasion_id 			= '" . (int)$occasion_id . "', 
+					occasion_group_id = '" . (int)$occasion_occasion_group. "'
+				");
 			}
 		}
 
@@ -147,8 +150,11 @@ class ModelCatalogOccasion extends Model {
 		
 		$this->db->query("DELETE FROM " . DB_PREFIX . "occasion_to_occasion_group WHERE occasion_id = '" . (int)$occasion_id . "'");
 		if (isset($data['occasion_to_occasion_group'])) {
-			foreach ($data['occasion_to_occasion_group'] as $occasion_occasion_group) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "occasion_to_occasion_group SET occasion_id = '" . (int)$occasion_id . "', occasion_group_id = '" . (int)$occasion_occasion_group['occasion_group_id'] . "'");
+			foreach ($data['occasion_to_occasion_group'] as $key => $occasion_occasion_group) {
+				$this->db->query("INSERT INTO " . DB_PREFIX . "occasion_to_occasion_group SET 
+					occasion_id 			= '" . (int)$occasion_id . "', 
+					occasion_group_id = '" . (int)$occasion_occasion_group . "'
+				");
 			}
 		}
 		
