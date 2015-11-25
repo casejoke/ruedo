@@ -13,7 +13,7 @@ class ControllerCommonHome extends Controller {
 		$this->load->model('catalog/occasion_group');
 		$this->load->model('tool/image');
 
-		
+
 		/***************** проекты **********************/
 		//подтянем фильтр
 		//получаем активные форматы
@@ -102,6 +102,8 @@ class ControllerCommonHome extends Controller {
 		}
 
 		/***************** проекты **********************/
+
+		
 			print_r('<pre>');
 		print_r($data['occasions']);
 		print_r('</pre>');

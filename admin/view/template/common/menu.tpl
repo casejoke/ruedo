@@ -2,6 +2,8 @@
 
   <li><a href="<?php echo $occasion; ?>"><i class="md md-format-list-bulleted"></i> <?php echo $text_occasion; ?> </a></li>
   <li><a href="<?php echo $occasion_group; ?>"><i class="md md-format-list-bulleted"></i> <?php echo $text_occasion_group; ?> </a></li>
+  <li><a href="<?php echo $place; ?>"><i class="md md-format-list-bulleted"></i> <?php echo $text_place; ?> </a></li>
+
   <li class="sub-menu">
     <a href=""><i class="md md-description"></i> <?php echo $text_content; ?></a>
     <ul>
