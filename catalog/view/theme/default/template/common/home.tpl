@@ -143,85 +143,20 @@
         </nav>
         <div class="projects-list clear">
 
-          <?php if() ?>
+          <?php if(!empty($occasions)){ ?>
+            <?php foreach ($occasions as $occ_pr) { ?>
+              <div class="project project_pr project_event">
+                <img class="project__image" src="images/project1.jpg"/>
+                <a class="project__name-outer popup" href="#project1">
+                  <span class="project__name">
+                    <span class="project__title">Black XS</span> Live Sound
+                  </span>
+                </a>
+              </div>
+            <?php } ?>
+          <?php } ?>
 
-          <div class="project project_pr project_event">
-            <img class="project__image" src="images/project1.jpg"/>
-            <a class="project__name-outer popup" href="#project1">
-              <span class="project__name">
-                <span class="project__title">Black XS</span> Live Sound
-              </span>
-            </a>
           </div>
-          <div class="project project_event">
-            <img class="project__image" src="images/project2.jpg"/>
-            <a class="project__name-outer popup" href="#project2">
-              <span class="project__name">
-                Название
-              </span>
-            </a>
-          </div>
-          <div class="project project_cc">
-            <img class="project__image" src="images/project3.jpg"/>
-            <a class="project__name-outer popup" href="#project3">
-              <span class="project__name">
-                Название
-              </span>
-            </a>
-          </div>
-          <div class="project project_pr project_cc project_event">
-            <img class="project__image" src="images/project4.jpg"/>
-            <a class="project__name-outer popup" href="#project4">
-              <span class="project__name">
-                Название
-              </span>
-            </a>
-          </div>
-          <div class="project project_pr">
-            <img class="project__image" src="images/project5.jpg"/>
-            <a class="project__name-outer popup" href="#project5">
-              <span class="project__name">
-                Название
-              </span>
-            </a>
-          </div>
-          <div class="project project_event project_cc">
-            <img class="project__image" src="images/project6.jpg"/>
-            <a class="project__name-outer popup" href="#project6">
-              <span class="project__name">
-                Название
-              </span>
-            </a>
-          </div>
-          <div class="project project_event project_pr">
-            <img class="project__image" src="images/project7.jpg"/>
-            <a class="project__name-outer popup" href="#project7">
-              <span class="project__name">
-                Название
-              </span>
-            </a>
-          </div>
-          <div class="project project_event project_cc">
-            <img class="project__image" src="images/project8.jpg"/>
-            <a class="project__name-outer popup" href="#project8">
-              <span class="project__name">
-                Название
-              </span>
-            </a>
-          </div>
-
-          <div class="project project_pr">
-            <img class="project__image" src="images/project9.jpg"/>
-            <a class="project__name-outer popup" href="#project9">
-              <span class="project__name">
-                Название
-              </span>
-            </a>
-          </div>
-
-
-
-        </div>
       </div>
       <div class="parallax-outer">        
         <img class="parallax-element parallax-element33" src="images/projects/1.png"/>

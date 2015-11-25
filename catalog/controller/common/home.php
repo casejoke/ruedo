@@ -103,12 +103,6 @@ class ControllerCommonHome extends Controller {
 
 		/***************** проекты **********************/
 
-		
-			print_r('<pre>');
-		print_r($data['occasions']);
-		print_r('</pre>');
-		die();
-		
 
 
 		$data['column_left'] = $this->load->controller('common/column_left');
