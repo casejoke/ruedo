@@ -20,28 +20,30 @@ class ControllerCommonHome extends Controller {
 		$occasion_group_active = $this->model_catalog_occasion_group->getActiveOccasionGroup();
 		$data['occasion_groups'] = array();
 		foreach ($occasion_group_active as $occasion_group) {
-			$data['occasion_groups'][] = array(
+			$data['occasion_groups'][$occasion_group['occasion_group_id']] = array(
 				'occasion_group_id' => $occasion_group['occasion_group_id'],
 				'link' => 'type_'.$occasion_group['occasion_group_id'],
-				'title' => $occasion_group['title']
+				'title' 		=> $occasion_group['title']
 			);
 		}
-
+		
 		$filter_data = array(
 			'filter_status'    => 1,
 			'sort' => 'd.occasion_date',
 			'order' => 'ASC'
 		);
-
+		
 		//получаем список с occasion_to_occasion_group
 		$occasions_to_occasion_groups = $this->model_catalog_occasion->getOccasionsToOccasionGroups();
 		$occasion_to_group = array();
 		foreach ($occasions_to_occasion_groups as $og) {
+
 			$occasion_to_group[$og['occasion_id']][] = array(
 				'occasion_id' 		=> $og['occasion_id'],
 				'occasion_group_id' => $og['occasion_group_id']
 			);
 		}
+		
 		$language_results = $this->model_localisation_language->getLanguages();
 		$language_code = $this->language->get('code');
 		foreach ($language_results as $result) {
@@ -67,8 +69,10 @@ class ControllerCommonHome extends Controller {
 	 	$data['occasions'] = array();
 		foreach ($occasions as $occasion) {
 			$filter_type = '';
+			$title  = '';
 			foreach ($occasion_to_group[$occasion['occasion_id']] as $occasion_to_group_val) {
-				$filter_type = $filter_type.' '.'type_'.$occasion_to_group_val['occasion_group_id'];
+				$filter_type = $filter_type.' '.'project_type_'.$occasion_to_group_val['occasion_group_id'];
+				$title = $title.' '.$data['occasion_groups'][$occasion_to_group_val['occasion_group_id']]['title'].' /';
 			}
 
 			if (!empty($occasion['image'])) {
@@ -88,14 +92,16 @@ class ControllerCommonHome extends Controller {
 				}
 			}
 			//собственно сами проекты
-			$data['occasions'][$occasion_to_group_val['occasion_group_id']][] = array (
+			$data['occasions'][] = array (
 						'occasion_id' 			=> $occasion['occasion_id'],
-						'class'							=> $filter_type,
-						'title' 						=> html_entity_decode($occasion['title'], ENT_QUOTES),
-						'min_title' 				=> html_entity_decode($occasion['min_title'], ENT_QUOTES),
+						'class'					=> $filter_type,
+						'title' 				=> html_entity_decode($occasion['title'], ENT_QUOTES),
+						'min_title' 		    => html_entity_decode($occasion['min_title'], ENT_QUOTES),
+						'description' 		    => html_entity_decode($occasion['description'], ENT_QUOTES),
 						'occasion_group_id' => $occasion_to_group_val['occasion_group_id'],
 						'image'							=> $image,
-						'images_project'   => $images_project
+						'images_project'   => $images_project,
+						'project_title'		=> $title
 			);
 				
 			

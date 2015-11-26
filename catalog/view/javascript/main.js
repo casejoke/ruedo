@@ -214,6 +214,7 @@ $(window).scroll(function(){
 
 			
 			var type = $(this).attr('data-type');
+			console.log(type);
 			
 			$('.projects-list').fadeOut(300, function(){
 				

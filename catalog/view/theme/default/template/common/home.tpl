@@ -87,7 +87,7 @@
           Нами реализовано <span class="about__block-portfolio-total">> 1000</span> <span class="about__block-portfolio-black">уникальных проектов</span>
         </div>
         <div class="about__block about__block_concierge">
-          Мы предлагаем исключительно «concierge» решения, сопровождая наших клиентов на всех стадиях реализации проекта.
+          Мы предлагаем исключительно «concierge» решения, сопровождая наших клиентов на всех стадиях реализации проекта.
         </div>
       </div>
       <div class="parallax-outer">        
@@ -145,12 +145,11 @@
 
           <?php if(!empty($occasions)){ ?>
             <?php foreach ($occasions as $occ_pr) { ?>
-              <div class="project project_pr project_event">
+              <div class="project <?php echo $occ_pr['class']; ?>">
                 <img class="project__image" src="images/project1.jpg"/>
-                <a class="project__name-outer popup" href="#project1">
+                <a class="project__name-outer popup" href="#project_<?php echo $occ_pr['occasion_id']; ?>">
                   <span class="project__name">
-                    <span class="project__title">Black XS</span> Live Sound
-                  </span>
+                    <span class="project__title"><?php echo $occ_pr['title']; ?></span> <?php echo $occ_pr['min_title']; ?></span>
                 </a>
               </div>
             <?php } ?>
@@ -425,312 +424,49 @@
   </main>   
   <noindex>
     <div class="loader"></div>
-    <div id="project1" class="popup-project popup-project_item">
-      <div class="popup-project__inner">
-        <div class="wrap clear">
-          <article class="popup-project__text">
-            <h2>Black XS</h2>
-            <h3>Live Sound</h3>
-            <p>
-              Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности способствует подготовки и реализации форм развития. 
-            </p>
-            <p>
-              Не следует, однако забывать, что начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития.
-            </p>
-          </article>
-          <div class="popup-project__images slider">
-            <h2>Event / design / Production</h2>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
+
+    <?php if(!empty($occasions)){ ?>
+      <?php foreach ($occasions as $occ_pr) { ?>
+       <div id="project_<?php echo $occ_pr['occasion_id']; ?>" class="popup-project popup-project_item">
+        <div class="popup-project__inner">
+          <div class="wrap clear">
+            <article class="popup-project__text">
+              <h2><?php echo $occ_pr['title']; ?></h2>
+              <h3><?php echo $occ_pr['min_title']; ?></h3>
+              <p>
+                Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности способствует подготовки и реализации форм развития. 
+              </p>
+              <p>
+                Не следует, однако забывать, что начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития.
+              </p>
+            </article>
+            <div class="popup-project__images slider">
+              <h2><?php echo $occ_pr['project_title']; ?></h2>
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <?php if(!empty($occ_pr['images_project'])){ ?>
+                    <?php foreach ($occ_pr['images_project'] as $key => $value) { ?>
+                      <div class="swiper-slide">
+                    <img src="images/popup1.jpg"/>
+                  </div>
+                    <?php } ?>
+                  <?php } ?>
+                  </div>
+                <div class="slider__pagination"></div>
               </div>
-              <div class="slider__pagination"></div>
             </div>
+            <div class="popup-project__border"></div>
+            <a class="popup-project__prev" href="#"></a>
+            <a class="popup-project__next" href="#"></a>
+            <a class="popup-project__close" href="#"></a>
           </div>
-          <div class="popup-project__border"></div>
-          <a class="popup-project__prev" href="#"></a>
-          <a class="popup-project__next" href="#"></a>
-          <a class="popup-project__close" href="#"></a>
         </div>
       </div>
-    </div>
-    <div id="project2" class="popup-project popup-project_item">
-      <div class="popup-project__inner">
-        <div class="wrap clear">
-          <article class="popup-project__text">
-            <h2>Black XS</h2>
-            <h3>Live Sound</h3>
-            <p>
-              Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности способствует подготовки и реализации форм развития. 
-            </p>
-            <p>
-              Не следует, однако забывать, что начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития.
-            </p>
-          </article>
-          <div class="popup-project__images slider">
-            <h2>Event / design / Production</h2>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-              </div>
-              <div class="slider__pagination"></div>
-            </div>
-          </div>
-          <div class="popup-project__border"></div>
-          <a class="popup-project__prev" href="#"></a>
-          <a class="popup-project__next" href="#"></a>
-          <a class="popup-project__close" href="#"></a>
-        </div>
-      </div>
-    </div>
-    <div id="project3" class="popup-project popup-project_item">
-      <div class="popup-project__inner">
-        <div class="wrap clear">
-          <article class="popup-project__text">
-            <h2>Black XS</h2>
-            <h3>Live Sound</h3>
-            <p>
-              Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности способствует подготовки и реализации форм развития. 
-            </p>
-            <p>
-              Не следует, однако забывать, что начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития.
-            </p>
-          </article>
-          <div class="popup-project__images slider">
-            <h2>Event / design / Production</h2>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-              </div>
-              <div class="slider__pagination"></div>
-            </div>
-          </div>
-          <div class="popup-project__border"></div>
-          <a class="popup-project__prev" href="#"></a>
-          <a class="popup-project__next" href="#"></a>
-          <a class="popup-project__close" href="#"></a>
-        </div>
-      </div>
-    </div>
-    <div id="project4" class="popup-project popup-project_item">
-      <div class="popup-project__inner">
-        <div class="wrap clear">
-          <article class="popup-project__text">
-            <h2>Black XS</h2>
-            <h3>Live Sound</h3>
-            <p>
-              Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности способствует подготовки и реализации форм развития. 
-            </p>
-            <p>
-              Не следует, однако забывать, что начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития.
-            </p>
-          </article>
-          <div class="popup-project__images slider">
-            <h2>Event / design / Production</h2>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-              </div>
-              <div class="slider__pagination"></div>
-            </div>
-          </div>
-          <div class="popup-project__border"></div>
-          <a class="popup-project__prev" href="#"></a>
-          <a class="popup-project__next" href="#"></a>
-          <a class="popup-project__close" href="#"></a>
-        </div>
-      </div>
-    </div>
-    <div id="project5" class="popup-project popup-project_item">
-      <div class="popup-project__inner">
-        <div class="wrap clear">
-          <article class="popup-project__text">
-            <h2>Black XS</h2>
-            <h3>Live Sound</h3>
-            <p>
-              Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности способствует подготовки и реализации форм развития. 
-            </p>
-            <p>
-              Не следует, однако забывать, что начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития.
-            </p>
-          </article>
-          <div class="popup-project__images slider">
-            <h2>Event / design / Production</h2>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-              </div>
-              <div class="slider__pagination"></div>
-            </div>
-          </div>
-          <div class="popup-project__border"></div>
-          <a class="popup-project__prev" href="#"></a>
-          <a class="popup-project__next" href="#"></a>
-          <a class="popup-project__close" href="#"></a>
-        </div>
-      </div>
-    </div>
-    <div id="project6" class="popup-project popup-project_item">
-      <div class="popup-project__inner">
-        <div class="wrap clear">
-          <article class="popup-project__text">
-            <h2>Black XS</h2>
-            <h3>Live Sound</h3>
-            <p>
-              Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности способствует подготовки и реализации форм развития. 
-            </p>
-            <p>
-              Не следует, однако забывать, что начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития.
-            </p>
-          </article>
-          <div class="popup-project__images slider">
-            <h2>Event / design / Production</h2>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-              </div>
-              <div class="slider__pagination"></div>
-            </div>
-          </div>
-          <div class="popup-project__border"></div>
-          <a class="popup-project__prev" href="#"></a>
-          <a class="popup-project__next" href="#"></a>
-          <a class="popup-project__close" href="#"></a>
-        </div>
-      </div>
-    </div>
-    <div id="project7" class="popup-project popup-project_item">
-      <div class="popup-project__inner">
-        <div class="wrap clear">
-          <article class="popup-project__text">
-            <h2>Black XS</h2>
-            <h3>Live Sound</h3>
-            <p>
-              Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности способствует подготовки и реализации форм развития. 
-            </p>
-            <p>
-              Не следует, однако забывать, что начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития.
-            </p>
-          </article>
-          <div class="popup-project__images slider">
-            <h2>Event / design / Production</h2>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-              </div>
-              <div class="slider__pagination"></div>
-            </div>
-          </div>
-          <div class="popup-project__border"></div>
-          <a class="popup-project__prev" href="#"></a>
-          <a class="popup-project__next" href="#"></a>
-          <a class="popup-project__close" href="#"></a>
-        </div>
-      </div>
-    </div>
-    <div id="project8" class="popup-project popup-project_item">
-      <div class="popup-project__inner">
-        <div class="wrap clear">
-          <article class="popup-project__text">
-            <h2>Black XS</h2>
-            <h3>Live Sound</h3>
-            <p>
-              Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности способствует подготовки и реализации форм развития. 
-            </p>
-            <p>
-              Не следует, однако забывать, что начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития.
-            </p>
-          </article>
-          <div class="popup-project__images slider">
-            <h2>Event / design / Production</h2>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-              </div>
-              <div class="slider__pagination"></div>
-            </div>
-          </div>
-          <div class="popup-project__border"></div>
-          <a class="popup-project__prev" href="#"></a>
-          <a class="popup-project__next" href="#"></a>
-          <a class="popup-project__close" href="#"></a>
-        </div>
-      </div>
-    </div>
-    <div id="project9" class="popup-project popup-project_item">
-      <div class="popup-project__inner">
-        <div class="wrap clear">
-          <article class="popup-project__text">
-            <h2>Black XS</h2>
-            <h3>Live Sound</h3>
-            <p>
-              Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности способствует подготовки и реализации форм развития. 
-            </p>
-            <p>
-              Не следует, однако забывать, что начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития.
-            </p>
-          </article>
-          <div class="popup-project__images slider">
-            <h2>Event / design / Production</h2>
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-                <div class="swiper-slide">
-                  <img src="images/popup1.jpg"/>
-                </div>
-              </div>
-              <div class="slider__pagination"></div>
-            </div>
-          </div>
-          <div class="popup-project__border"></div>
-          <a class="popup-project__prev" href="#"></a>
-          <a class="popup-project__next" href="#"></a>
-          <a class="popup-project__close" href="#"></a>
-        </div>
-      </div>
-    </div>
+        
+      <?php } ?>
+    <?php } ?>
+
+
     <div id="vacancy" class="popup-project">
       <div class="popup-project__inner">
         <div class="wrap wrap_small clear">
