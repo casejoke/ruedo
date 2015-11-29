@@ -12,7 +12,7 @@ class ControllerCommonHome extends Controller {
 		$this->load->model('catalog/occasion');
 		$this->load->model('catalog/occasion_group');
 		$this->load->model('tool/image');
-
+		$this->load->model('catalog/place');
 
 		/***************** проекты **********************/
 		//подтянем фильтр
@@ -70,26 +70,28 @@ class ControllerCommonHome extends Controller {
 		foreach ($occasions as $occasion) {
 			$filter_type = '';
 			$title  = '';
-			foreach ($occasion_to_group[$occasion['occasion_id']] as $occasion_to_group_val) {
-				$filter_type = $filter_type.' '.'project_type_'.$occasion_to_group_val['occasion_group_id'];
-				$title = $title.' '.$data['occasion_groups'][$occasion_to_group_val['occasion_group_id']]['title'].' /';
+			if(!empty($occasion_to_group[$occasion['occasion_id']])){
+				foreach ($occasion_to_group[$occasion['occasion_id']] as $occasion_to_group_val) {
+					$filter_type = $filter_type.' '.'project_type_'.$occasion_to_group_val['occasion_group_id'];
+					$title = $title.' '.$data['occasion_groups'][$occasion_to_group_val['occasion_group_id']]['title'].' /';
+				}
 			}
-
-			if (!empty($occasion['image'])) {
-				$image = $this->model_tool_image->resize($occasion['image'], 270,200,'w');
-			}else {
-				$image = $this->model_tool_image->resize('placeholder.png', 270,200,'w');
-			}
+			
 			$images_project = array();
 			if( !empty($project_images[$occasion['occasion_id']]) ){
 
 				foreach ($project_images[$occasion['occasion_id']] as $piv) {
 					$images_project[] = array(
 						'title' 			=> $piv['occasion_image_description'][$language_id]['title'],
-						'image_full' 	=> $this->model_tool_image->resize($piv['image'], 1920,1280,'w'),
+						'image_preview' 	=> $this->model_tool_image->resize($piv['image'], 270,200,'h'),
 						'image' 			=> $this->model_tool_image->resize($piv['image'], 950,450,'w')
 					);
 				}
+			}
+			if (!empty($images_project)) {
+				$image = $images_project[0]['image_preview'];
+			}else {
+				$image = $this->model_tool_image->resize('placeholder.png', 270,200,'w');
 			}
 			//собственно сами проекты
 			$data['occasions'][] = array (
@@ -107,7 +109,28 @@ class ControllerCommonHome extends Controller {
 			
 		}
 
-		/***************** проекты **********************/
+		/***************** услуги **********************/
+		//получим активные места услуги
+		$filter_data = array(
+			'filter_status'    => 1
+		);
+
+		$places = $this->model_catalog_place->getPlaces($filter_data);
+		$data['places'] = array();
+		foreach ($places as $place) {
+			if (!empty($place['image'])) {
+				$image= '/image/'.$place['image'];
+			}else{
+				$image = $this->model_tool_image->resize('placeholder.png', 150,194,'w');
+			}
+			$data['places'][] = array(
+				'place_id' => $place['place_id'],
+				'place_title' => $place['title'],
+				'place_description' => html_entity_decode($place['description'], ENT_QUOTES),
+				'place_image' => $image,
+			);
+		}
+
 
 
 

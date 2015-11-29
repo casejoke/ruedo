@@ -106,6 +106,6 @@ $_['text_occasion']         = 'Кейсы';
 $_['text_occasion_group']   = 'Фильтр кейсов';
 $_['text_customer_stats']         = 'Статистика';
 
-$_['text_place']          	= 'Местонахождение';
+$_['text_place']          	= 'Услуги';
 $_['text_occasion_record']  = 'Запись на игру';
 

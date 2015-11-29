@@ -51,7 +51,7 @@
 
                             <div class="form-group required <?php if (isset($error_title[$language['language_id']])) { ?> has-error <?php } ?>">
                               <div class="fg-line">
-                                  <label class="control-label" for="input-title<?php echo $language['language_id']; ?>"><?php echo $entry_title; ?></label>
+                                  <label class="control-label" for="input-title<?php echo $language['language_id']; ?>">Название блока</label>
                                   <input type="text" name="information_description[<?php echo $language['language_id']; ?>][title]" value="<?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['title'] : ''; ?>"  id="input-title<?php echo $language['language_id']; ?>" class="form-control" />
                               </div>
                               <?php if (isset($error_title[$language['language_id']])) { ?>
@@ -60,16 +60,16 @@
                             </div>
 
                             <div class="form-group required <?php if (isset($error_description[$language['language_id']])) { ?> has-error <?php } ?>">
-                              <div class="fg-line">
-                                  <label class="control-label m-b-10" for="input-description<?php echo $language['language_id']; ?>"><?php echo $entry_description; ?></label>
-                                  <textarea name="information_description[<?php echo $language['language_id']; ?>][description]" id="input-description<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['description'] : ''; ?></textarea>
+                              <div class="fg-line" style="backgroung:#CCC;">
+                                  <label class="control-label m-b-10" for="input-description<?php echo $language['language_id']; ?>">HTML код блока</label>
+                                  <textarea style="backgroung:#CCC;" name="information_description[<?php echo $language['language_id']; ?>][description]" rows="20" id="input-description<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['description'] : ''; ?></textarea>
                               </div>
                               <?php if (isset($error_description[$language['language_id']])) { ?>
                                 <small class="help-block"><?php echo $error_description[$language['language_id']]; ?></small>
                               <?php } ?>
                             </div>
 
-                            <div class="form-group required <?php if (isset($error_title[$language['language_id']])) { ?> has-error <?php } ?>">
+                            <div class="form-group hidden <?php if (isset($error_title[$language['language_id']])) { ?> has-error <?php } ?>">
                               <div class="fg-line">
                                   <label class="control-label" for="input-meta-title<?php echo $language['language_id']; ?>"><?php echo $entry_meta_title; ?></label>
                                   <input type="text" name="information_description[<?php echo $language['language_id']; ?>][meta_title]" value="<?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['meta_title'] : ''; ?>" id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control" />
@@ -79,13 +79,13 @@
                               <?php } ?>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group hidden">
                               <div class="fg-line">
                                   <label class="control-label m-b-10" for="input-meta-description<?php echo $language['language_id']; ?>"><?php echo $entry_meta_description; ?></label>
                                   <textarea name="information_description[<?php echo $language['language_id']; ?>][meta_description]" class="form-control auto-size" rows="4" id="input-meta-description<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['meta_description'] : ''; ?></textarea>
                               </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group hidden">
                               <div class="fg-line">
                                   <label class="control-label m-b-10" for="input-meta-keyword<?php echo $language['language_id']; ?>"><?php echo $entry_meta_keyword; ?></label>
                                   <textarea name="information_description[<?php echo $language['language_id']; ?>][meta_keyword]" class="form-control auto-size" rows="4" id="input-meta-keyword<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['meta_keyword'] : ''; ?></textarea>
@@ -238,9 +238,7 @@
 </section>
 <script type="text/javascript"><!--
   <?php foreach ($languages as $language) { ?>
-  $('#input-description<?php echo $language['language_id']; ?>').summernote({
-  	height: 300
-  });
+  
   <?php } ?>
   $('#language a:first').tab('show');
 //--></script>

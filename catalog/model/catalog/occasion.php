@@ -177,7 +177,7 @@ class ModelCatalogOccasion extends Model {
 	public function getOccasionsImages(){
 		$occasion_image_data = array();
 		
-		$occasion_image_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "occasion_image ORDER BY occasion_image_id ASC");
+		$occasion_image_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "occasion_image ORDER BY sort_order DESC");
 		
 		foreach ($occasion_image_query->rows as $occasion_image) {
 			
@@ -212,7 +212,8 @@ class ModelCatalogOccasion extends Model {
 		foreach ($occasion_image_query->rows as $occasion_image) {
 			$occasion_image_description_data = array();
 			 
-			$occasion_image_description_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "occasion_image_description WHERE occasion_image_id = '" . (int)$occasion_image['occasion_image_id'] . "' AND occasion_id = '" . (int)$occasion_id . "'");
+			$occasion_image_description_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "occasion_image_description WHERE 
+				occasion_image_id = '" . (int)$occasion_image['occasion_image_id'] . "' AND occasion_id = '" . (int)$occasion_id . "'");
 			
 			foreach ($occasion_image_description_query->rows as $occasion_image_description) {			
 				$occasion_image_description_data[$occasion_image_description['language_id']] = array(

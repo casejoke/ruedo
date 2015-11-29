@@ -146,7 +146,7 @@
           <?php if(!empty($occasions)){ ?>
             <?php foreach ($occasions as $occ_pr) { ?>
               <div class="project <?php echo $occ_pr['class']; ?>">
-                <img class="project__image" src="images/project1.jpg"/>
+                <img class="project__image" src="<?php echo $occ_pr['image']; ?>"/>
                 <a class="project__name-outer popup" href="#project_<?php echo $occ_pr['occasion_id']; ?>">
                   <span class="project__name">
                     <span class="project__title"><?php echo $occ_pr['title']; ?></span> <?php echo $occ_pr['min_title']; ?></span>
@@ -155,7 +155,7 @@
             <?php } ?>
           <?php } ?>
 
-          </div>
+        </div>
       </div>
       <div class="parallax-outer">        
         <img class="parallax-element parallax-element33" src="images/projects/1.png"/>
@@ -195,66 +195,23 @@
         <div class="service__list clear">
           <div class="swiper-container">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="service-item service-item_grey">
-                  <img class="service-item__image" src="images/pr.png"/>
-                  <h3>PR</h3>
-                  <p>Креативные услуги</p>
-                  <p>Позиционирование бренда на рынке</p>
-                  <p>Медийная работа</p>
-                  <p>Специальные проекты в СМИ</p>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item service-item_grey">
-                  <img class="service-item__image" src="images/corporate-communication.png"/>
-                  <h3>CORPORATE COMMUNICATION</h3>
-                  <p>Тренинги персонала</p>
-                  <p class="highlight">Мотивационные программы</p>
-                  <p>Team Building</p>
-                  <p>Фирменный Стиль</p>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item service-item_grey">
-                  <img class="service-item__image" src="images/event.png"/>
-                  <h3>EVENT</h3>
-                  <p>Ресторанное обслуживание</p>
-                  <p>Декорации и location</p>
-                  <p>Outsorsing Event Execution</p>
-                  <p>Концепция Мероприятия</p>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item service-item_grey">
-                  <img class="service-item__image" src="images/pr.png"/>
-                  <h3>PR</h3>
-                  <p>Креативные услуги</p>
-                  <p>Позиционирование бренда на рынке</p>
-                  <p>Медийная работа</p>
-                  <p>Специальные проекты в СМИ</p>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item service-item_grey">
-                  <img class="service-item__image" src="images/corporate-communication.png"/>
-                  <h3>CORPORATE COMMUNICATION</h3>
-                  <p>Тренинги персонала</p>
-                  <p class="highlight">Мотивационные программы</p>
-                  <p>Team Building</p>
-                  <p>Фирменный Стиль</p>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item service-item_grey">
-                  <img class="service-item__image" src="images/event.png"/>
-                  <h3>EVENT</h3>
-                  <p>Ресторанное обслуживание</p>
-                  <p>Декорации и location</p>
-                  <p>Outsorsing Event Execution</p>
-                  <p>Концепция Мероприятия</p>
-                </div>
-              </div>
+              
+              <?php if(!empty($places)){ ?>
+                <?php foreach ($places as $pl) { ?>
+
+                  <div class="swiper-slide">
+                    <div class="service-item service-item_grey">
+                      <img class="service-item__image" src="<?php echo $pl['place_image']; ?>"/>
+                      <h3><?php echo $pl['place_title']; ?></h3>
+                      <?php echo $pl['place_description']; ?>
+                    </div>
+                  </div>
+
+                <?php } ?>
+              <?php } ?>
+             
+
+
             </div>
           </div>
         </div>
@@ -433,22 +390,17 @@
             <article class="popup-project__text">
               <h2><?php echo $occ_pr['title']; ?></h2>
               <h3><?php echo $occ_pr['min_title']; ?></h3>
-              <p>
-                Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности способствует подготовки и реализации форм развития. 
-              </p>
-              <p>
-                Не следует, однако забывать, что начало повседневной работы по формированию позиции способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации направлений прогрессивного развития. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании дальнейших направлений развития.
-              </p>
+              <?php echo $occ_pr['description']; ?>
             </article>
             <div class="popup-project__images slider">
               <h2><?php echo $occ_pr['project_title']; ?></h2>
               <div class="swiper-container">
                 <div class="swiper-wrapper">
                   <?php if(!empty($occ_pr['images_project'])){ ?>
-                    <?php foreach ($occ_pr['images_project'] as $key => $value) { ?>
+                    <?php foreach ($occ_pr['images_project'] as $ip) { ?>
                       <div class="swiper-slide">
-                    <img src="images/popup1.jpg"/>
-                  </div>
+                        <img src="<?php echo  $ip['image']; ?>"/>
+                      </div>
                     <?php } ?>
                   <?php } ?>
                   </div>

@@ -4,7 +4,7 @@
   <div class="container">
     <div class="card">
       <div class="card-header">
-        <h2>Редактирование местоположения</h2>
+        <h2>Редактирование услуги</h2>
         <ul class="actions">
             <li> <button type="submit" form="form-place"  class="btn btn-success"><?php echo $button_save; ?></button></li>
             <li>
@@ -59,7 +59,7 @@
                                 <small class="help-block"><?php echo $error_title[$language['language_id']]; ?></small>
                               <?php } ?>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group hidden">
                               <div class="fg-line">
                                   <label class="control-label" for="input-address<?php echo $language['language_id']; ?>"><?php echo $entry_address; ?></label>
                                   <input type="text" name="place_description[<?php echo $language['language_id']; ?>][address]" value="<?php echo isset($place_description[$language['language_id']]) ? $place_description[$language['language_id']]['address'] : ''; ?>" id="input-address<?php echo $language['language_id']; ?>" class="form-control" />
@@ -76,7 +76,7 @@
                               <?php } ?>
                             </div>
 
-                            <div class="form-group required <?php if (isset($error_meta_title[$language['language_id']])) { ?> has-error <?php } ?>">
+                            <div class="form-group hidden <?php if (isset($error_meta_title[$language['language_id']])) { ?> has-error <?php } ?>">
                               <div class="fg-line">
                                   <label class="control-label" for="input-meta-title<?php echo $language['language_id']; ?>"><?php echo $entry_meta_title; ?></label>
                                   <input type="text" name="place_description[<?php echo $language['language_id']; ?>][meta_title]" value="<?php echo isset($place_description[$language['language_id']]) ? $place_description[$language['language_id']]['meta_title'] : ''; ?>" id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control" />
@@ -86,13 +86,13 @@
                               <?php } ?>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group hidden">
                               <div class="fg-line">
                                   <label class="control-label m-b-10" for="input-meta-description<?php echo $language['language_id']; ?>"><?php echo $entry_meta_description; ?></label>
                                   <textarea name="place_description[<?php echo $language['language_id']; ?>][meta_description]" class="form-control auto-size" rows="4" id="input-meta-description<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($place_description[$language['language_id']]) ? $place_description[$language['language_id']]['meta_description'] : ''; ?></textarea>
                               </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group hidden">
                               <div class="fg-line">
                                   <label class="control-label m-b-10" for="input-meta-keyword<?php echo $language['language_id']; ?>"><?php echo $entry_meta_keyword; ?></label>
                                   <textarea name="place_description[<?php echo $language['language_id']; ?>][meta_keyword]" class="form-control auto-size" rows="4" id="input-meta-keyword<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($place_description[$language['language_id']]) ? $place_description[$language['language_id']]['meta_keyword'] : ''; ?></textarea>
@@ -119,8 +119,8 @@
                       </div>   
                     </div>
                     <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group <?php if ($error_keyword) { ?> has-error <?php } ?>">
+                      <div class="col-sm-6 hidden">
+                        <div class="form-group  <?php if ($error_keyword) { ?> has-error <?php } ?>">
                           <div class="fg-line">
                               <label class="control-label" for="input-keyword"><?php echo $entry_keyword; ?></label>
                               <input type="text" name="keyword" value="<?php echo $keyword; ?>"  id="input-keyword" class="form-control" />
@@ -130,7 +130,7 @@
                           <?php } ?>
                         </div><!--/.form-group-->
                       </div>
-                      <div class="col-sm-6">
+                      <div class="col-sm-6 hidden">
                         <div class="form-group">
                           <div class="fg-line">
                               <label class="control-label" for="input-latitude_longitude"><?php echo $entry_latitude_longitude; ?></label>
@@ -139,8 +139,8 @@
                         </div><!--/.form-group-->
                       </div>
 
-                      <div class="col-sm-6">
-                        <div class="form-group">
+                      <div class="col-sm-6 hidden">
+                        <div class="form-group ">
                           <div class="fg-line">
                             <label class="control-label" for="input-metro_id"><?php echo $entry_metro; ?></label>
                             <div class="select">

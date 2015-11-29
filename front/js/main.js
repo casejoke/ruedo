@@ -67,9 +67,7 @@ $(document).ready(function(){
 		$($(this).attr('href')).find('.popup-project__images').addClass('slider');
 		
 		var slider = null;
-		setInterval(function(){
-			
-			slider = new Swiper('.slider .swiper-container', {
+		slider = new Swiper('.slider .swiper-container', {
 		        pagination: '.slider .slider__pagination',
 		        paginationClickable: true,
 		        freeMode: false,
@@ -77,6 +75,9 @@ $(document).ready(function(){
 		        loop: false,
 		        autoplay: 7000
 		    });
+		setInterval(function(){
+			
+			
 		}, 400);
 	
 		

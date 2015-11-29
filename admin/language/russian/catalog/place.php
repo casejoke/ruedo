@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']     = 'Места игры';
+$_['heading_title']     = 'Услуги';
 
 // Text
 $_['text_success']      = 'Настройки успешно изменены!';
@@ -20,7 +20,7 @@ $_['column_action']     		= 'Действие';
 
 
 // Entry
-$_['entry_title']       		= 'Название места';
+$_['entry_title']       		= 'Название услуги';
 $_['entry_address']       		= 'Адрес места';
 $_['entry_description']      = 'Описание';
 $_['entry_meta_title'] 	     = 'Мета-тег Title';
