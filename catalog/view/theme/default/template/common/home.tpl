@@ -45,64 +45,12 @@
         <img class="parallax-element parallax-element19" data-direction="-1" data-speed="7" src="images/banner/19.png"/>
         <img class="parallax-element parallax-element20" data-direction="-1" data-speed="9" src="images/banner/20.png"/>
       </div>
-    </section>
-    <section class="about parallax block block_white">
-      <div class="wrap clear">
-        <div class="about__heading-square-wrap">
-          <img class="about__heading-square" src="images/about_us/square.png">
-        </div>
-        <div class="about-heading">
-          <h2>Мы</h2>
-        </div>
-        <div class="notes-slider-wrap notes-slider-wrap-1">
-          <div class="notes-slider">
-            <div>
-              Мы воплощаем в жизнь проекты любой сложности, географии и размера
-            </div>
-            <div>
-              Мы воплощаем в жизнь проекты любой сложности, географии и размера 2
-            </div>
-            <div>
-              Мы воплощаем в жизнь проекты любой сложности, географии и размера 3
-            </div>
-            <div>
-              Мы воплощаем в жизнь проекты любой сложности, географии и размера 4
-            </div>
-            <div>
-              Мы воплощаем в жизнь проекты любой сложности, географии и размера 5
-            </div>
-          </div>
-        </div>
-        <div class="about__block about__block_worktime">
-          уже более <span class="about__block-worktime-num">15 лет</span>
-        </div>
-        <div class="about__block about__block_experience">
-          Наша «бутик» команда профессионалов<br/>
-          имеет разносторонний опыт,<br/>
-          <span class="about__block-experience-small">благодаря которому мы предлагаем</span>
-          <span class="about__block-experience-solution">решения</span>
-          <span class="about__block-experience-solution-num">360 &deg;</span>
-        </div>
-        <div class="about__block about__block_portfolio">
-          Нами реализовано <span class="about__block-portfolio-total">> 1000</span> <span class="about__block-portfolio-black">уникальных проектов</span>
-        </div>
-        <div class="about__block about__block_concierge">
-          Мы предлагаем исключительно «concierge» решения, сопровождая наших клиентов на всех стадиях реализации проекта.
-        </div>
-      </div>
-      <div class="parallax-outer">        
-        <img class="parallax-element parallax-element21" data-speed="8" src="images/about_us/1.png"/>
-        <img class="parallax-element parallax-element22" data-speed="2" src="images/about_us/2.png"/>
-        <img class="parallax-element parallax-element23" data-speed="2" src="images/about_us/3.png"/>
-        <img class="parallax-element parallax-element24" data-speed="7" src="images/about_us/4.png"/>
-        <img class="parallax-element parallax-element25" data-speed="5" src="images/about_us/5.png"/>
-        <img class="parallax-element parallax-element26" src="images/about_us/6.png"/>
-        <img class="parallax-element parallax-element28" data-direction="-1" src="images/about_us/8.png"/>
-        <img class="parallax-element parallax-element29" src="images/about_us/9.png"/>
-        <img class="parallax-element parallax-element30" data-speed="2" src="images/about_us/10.png"/>
-        <img class="parallax-element parallax-element32" data-direction="-1" src="images/about_us/12.png"/>
-      </div>
-    </section>
+   </section>
+    <?php if(!empty($information_about)) { ?>
+      <?php echo html_entity_decode( $information_about['description'], ENT_QUOTES); ?>
+    <?php } ?>
+    
+
     <section class="projects parallax block block_black">
       <div class="wrap clear">
         <div class="projects__title-wrap parallax-element">
@@ -168,6 +116,7 @@
         <img class="parallax-element parallax-element33-8" data-direction="-1" src="images/projects/8.png"/>
       </div>
     </section>
+
     <section class="service parallax block block_white">
       <div class="service__title-wrap parallax-element">
         <h2 class="service__title">Услуги</h2>
@@ -232,149 +181,14 @@
         <img class="parallax-element parallax-element44" src="images/service/11.png"/>
       </div>
     </section>
-    <section class="team parallax block block_black">
-      <div class="wrap">
-        <div class="team__title-wrap">
-          <h2 class="team__title">команда</h2>
-        </div>
-        <div class="notes-slider-wrap">
-          <div class="notes-slider">
-            <div>
-              Достаточные для уникальности каждого под ключ.
-            </div>
-            <div>
-              Достаточные для уникальности каждого под ключ 2
-            </div>
-            <div>
-              Достаточные для уникальности каждого под ключ 3
-            </div>
-            <div>
-              Достаточные для уникальности каждого под ключ 4
-            </div>
-            <div>
-              Достаточные для уникальности каждого под ключ 5
-            </div>
-          </div>
-        </div>
-        <div class="team__member team__member1">
-          <div class="team__member-name">
-            Натали Чаплюк
-          </div>
-          <div class="team__member-position">
-            PR-creator
-          </div>
-        </div>
-        <div class="team__member team__member2">
-          <div class="team__member-name">
-            Натали Чаплюк
-          </div>
-          <div class="team__member-position">
-            PR-creator
-          </div>
-        </div>
-        <div class="team__member team__member3">
-          <div class="team__member-name">
-            Натали Чаплюк
-          </div>
-          <div class="team__member-position">
-            PR-creator
-          </div>
-        </div>
-        <div class="team__member team__member4">
-          <div class="team__member-name">
-            Натали Чаплюк
-          </div>
-          <div class="team__member-position">
-            PR-creator
-          </div>
-        </div>
-        <div class="team__member team__member5">
-          <div class="team__member-name">
-            Натали Чаплюк
-          </div>
-          <div class="team__member-position">
-            PR-creator
-          </div>
-        </div>
-        <div class="team__member team__member6">
-          <div class="team__member-name">
-            Натали Чаплюк
-          </div>
-          <div class="team__member-position">
-            PR-creator
-          </div>
-        </div>
-        <div class="team__member team__member7">
-          <div class="team__member-name">
-            Натали Чаплюк
-          </div>
-          <div class="team__member-position">
-            PR-creator
-          </div>
-        </div>
-        <img class="team__list" src="images/stuff2.png"/>
-      </div>
-      <div class="parallax-outer">        
-        <img class="parallax-element parallax-element45" data-speed="3" src="images/team/1.png"/>
-        <img class="parallax-element parallax-element46" data-speed="1.7" src="images/team/2.png"/>
-        <img class="parallax-element parallax-element47" data-speed="30" src="images/team/3.png"/>
-        <img class="parallax-element parallax-element48" data-direction="-1" data-speed="20" src="images/team/4.png"/>
-        <img class="parallax-element parallax-element49" data-direction="-1" data-speed="15" src="images/team/5.png"/>
-        <img class="parallax-element parallax-element50" data-direction="-1" data-speed="6" src="images/team/6.png"/>
-        <img class="parallax-element parallax-element51" data-speed="3" src="images/team/7.png"/>
-        <div class="parallax-element button-wrap" data-speed="2">
-          <a class="button popup" href="#vacancy">Вакансии</a>
-        </div>
-      </div>
-    </section>
-    <section class="contacts parallax block block_black">
-      <div class="contacts__title-wrap">
-        <h2 class="contacts__title">Контакты</h2>
-      </div>
-      <div class="wrap">
-        <div class="notes-slider-wrap">
-          <div class="notes-slider">
-            <div>
-              В златоглавой Москве, но и по всему миру летаем.
-            </div>
-            <div>
-              В златоглавой Москве, но и по всему миру летаем 2
-            </div>
-            <div>
-              В златоглавой Москве, но и по всему миру летаем 3
-            </div>
-            <div>
-              В златоглавой Москве, но и по всему миру летаем 4
-            </div>
-            <div>
-              В златоглавой Москве, но и по всему миру летаем 5
-            </div>
-          </div>
-        </div>
-        <div class="contacts__address">
-          <h3 class="contacts__address-title">Адрес</h3>
-          <p class="contacts__address-text">125450, Первопрестольный пер.,<br/>Москва, Росссия</p>
-          <p class="contacts__address-text">
-            +7 (495) 463-51-41<br/>
-            +7 (926) 121-23-34 
-          </p>
-        </div>
-        <a class="contacts__email" href="mailto: info@ruedo.ru">info@ruedo.ru</a>
-        <div class="contacts__map">
-          <div class="contacts__map-inner" id="map"></div>
-        </div>
-      </div>
-      <div class="parallax-outer">        
-        <img class="parallax-element parallax-element52" src="images/contacts/1.png"/>
-        <img class="parallax-element parallax-element53" data-speed="2" src="images/contacts/2.png"/>
-        <img class="parallax-element parallax-element54" data-direction="-1" src="images/contacts/3.png"/>
-        <img class="parallax-element parallax-element55" data-direction="-1" data-speed="6" src="images/contacts/4.png"/>
-        <img class="parallax-element parallax-element56" src="images/contacts/5.png"/>
-        <img class="parallax-element parallax-element57" data-speed="3" src="images/contacts/6.png"/>
-        <img class="parallax-element parallax-element58" data-speed="5" src="images/contacts/7.png"/>
-        <img class="parallax-element parallax-element59" data-direction="-1" src="images/contacts/8.png"/>
-      </div>
-    </section>
+
+    <?php if(!empty($information_team)) { ?>
+      <?php echo html_entity_decode( $information_team['description'], ENT_QUOTES); ?>
+    <?php } ?>
+     <?php if(!empty($information_contact)) { ?>
+      <?php echo html_entity_decode( $information_contact['description'], ENT_QUOTES); ?>
+    <?php } ?>
+    
     <footer class="footer">
       Ruedo. Allright reserved 2015
     </footer>
@@ -419,15 +233,6 @@
     <?php } ?>
 
 
-    <div id="vacancy" class="popup-project">
-      <div class="popup-project__inner">
-        <div class="wrap wrap_small clear">
-          <h2>Вакансии</h2>
-          <p>Нам требуются следующие специалисты:</p>
-          <p>< Специалист > на 8-ми часовой рабочий день, зарплата < x > рублей.</p>
-          <a class="popup-project__close popup-project__close_top" href="#"></a>
-        </div>
-      </div>
-    </div>
+    
   </noindex>
 <?php echo $footer; ?>

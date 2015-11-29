@@ -13,6 +13,7 @@ class ControllerCommonHome extends Controller {
 		$this->load->model('catalog/occasion_group');
 		$this->load->model('tool/image');
 		$this->load->model('catalog/place');
+		$this->load->model('catalog/information');
 
 		/***************** проекты **********************/
 		//подтянем фильтр
@@ -132,7 +133,10 @@ class ControllerCommonHome extends Controller {
 		}
 
 
-
+		//************************ кастомное блоки ************//
+		$data['information_about'] = $this->model_catalog_information->getInformation(8);
+		$data['information_team'] = $this->model_catalog_information->getInformation(9);
+		$data['information_contact'] = $this->model_catalog_information->getInformation(10);
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');

@@ -4,7 +4,7 @@
   <div class="container">
     <div class="card">
       <div class="card-header">
-        <h2>Редактирование статьи</h2>
+        <h2>Редактирование </h2>
         <ul class="actions">
             <li> <button type="submit" form="form-information"  class="btn btn-success"><?php echo $button_save; ?></button></li>
             <li>
@@ -60,9 +60,9 @@
                             </div>
 
                             <div class="form-group required <?php if (isset($error_description[$language['language_id']])) { ?> has-error <?php } ?>">
-                              <div class="fg-line" style="backgroung:#CCC;">
+                              <div class="fg-line">
                                   <label class="control-label m-b-10" for="input-description<?php echo $language['language_id']; ?>">HTML код блока</label>
-                                  <textarea style="backgroung:#CCC;" name="information_description[<?php echo $language['language_id']; ?>][description]" rows="20" id="input-description<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['description'] : ''; ?></textarea>
+                                  <textarea style="background:#CCC;" name="information_description[<?php echo $language['language_id']; ?>][description]" rows="20" id="input-description<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['description'] : ''; ?></textarea>
                               </div>
                               <?php if (isset($error_description[$language['language_id']])) { ?>
                                 <small class="help-block"><?php echo $error_description[$language['language_id']]; ?></small>
